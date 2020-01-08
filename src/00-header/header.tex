@@ -1,0 +1,89 @@
+% To get info regarding current file's path.
+% doc : http://ctan.tetaneutral.net/macros/latex/contrib/currfile/currfile.pdf
+\usepackage[parent]{currfile}
+\usepackage{currfile-abspath}
+
+\newcommand{\headerDirPath}{00-header}
+
+
+
+\input{\headerDirPath/encoding}
+
+
+%\usepackage{showframe}
+%\setlength{\textwidth}{17cm}
+%\setlength{\marginparwidth}{2cm}
+%\usepackage[margin=2cm]{geometry} % OK
+
+
+%
+%   Document language configuration
+%
+%\input{\headerDirPath/lang/en}
+\input{\headerDirPath/lang/fr}
+
+
+%
+%   Chapters & TOC numbering configuration
+%
+\input{\headerDirPath/numbering/numbering.tex}
+
+
+%
+%   Different kind of annotations
+%
+\input{\headerDirPath/annotations/footnotes}
+\input{\headerDirPath/annotations/todo}
+
+
+% ##############################################################################
+% ##############################################################################
+
+% Pour utiliser \href
+\usepackage{hyperref}
+
+% Pour utiliser \includegraphics
+\usepackage{graphicx}
+\usepackage{caption}
+
+% Pour utiliser "framed"
+\usepackage{fancybox,framed}
+
+\input{\headerDirPath/math/packages}
+
+
+
+\usepackage{color}
+\usepackage{listings}
+
+% To draw a frame around the block:
+\lstset{frame=single}
+
+% To set a default language for the document (can optionally be changed in each
+% code-block with `\begin{lstlisting}[language=tex]̀  for example).
+\lstset{language=C}
+
+\lstnewenvironment{mytexcode}[1][]
+{
+    \lstset{language=tex}
+    \lstset{#1} % Add/update settings locally
+}
+{
+}
+
+\lstset{% Global options
+    frame = single,
+    basicstyle = \ttfamily\small,
+    language = C
+}
+
+
+
+
+\usepackage{fourier} % pour utiliser des symboles comme \danger
+
+
+% Pour environnement "Exam"
+%\printanswers
+%\newcommand{\beginSolution}{\begin{solution}}
+%\newcommand{\endSolution}{\end{solution}}

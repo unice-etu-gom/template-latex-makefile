@@ -1,0 +1,30 @@
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% pour mathscr
+\usepackage{mathrsfs}
+
+% pour encadrer dans environnement align (\Aboxed)
+\usepackage{mathtools}
+
+% Pour barrer des éléments, dans une equation par exemple...
+\usepackage{cancel}
+
+
+
+\usepackage{mathrsfs,scalerel}
+%\newsavebox\foobox
+%\newlength{\foodim}
+%\newcommand{\slantbox}[2][0]{\mbox{%
+%		\sbox{\foobox}{#2}%
+%		\foodim=#1\wd\foobox
+%		\hskip \wd\foobox
+%		\hskip -0.5\foodim
+%		\pdfsave
+%		\pdfsetmatrix{1 0 #1 1}%
+%		\llap{\usebox{\foobox}}%
+%		\pdfrestore
+%		\hskip 0.5\foodim
+%}}
+%\def\Laplace{\ThisStyle{\slantbox[-.45]{$\SavedStyle\mathscr{L}$}}}
+\def\Laplace#1{\mathscr{L}\left\{#1\right\}}

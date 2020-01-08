@@ -1,0 +1,39 @@
+\usepackage[colorinlistoftodos]{todonotes}
+
+
+\newcounter{todocounter}
+\newcommand{\todonum}[2][]
+{
+	\stepcounter{todocounter}
+	\todo[#1]{\thetodocounter: #2}
+}
+\newcommand{\todoGOM}[1]{\todonum[author=GOM,color={blue!20}]{#1}}
+
+
+
+
+% The following is from the `todonotes` package documentation.
+% It provides Microsoft Word-like comments :
+% Initials of the author (optional) + notes in the margin
+\newcounter{mycommentcounter}
+\newcommand{\comment}[2][]{%
+    \refstepcounter{mycommentcounter}%
+    {%
+    %    \setstretch{0.7}%
+    %    \todo[color={red!100!green!33},size=\ssmall]{%
+    %        \textbf{Comment [\uppercase{#1}\themycommentcounter]:}~#2}%
+        \todo[color={red!100!green!33},size=\small]{\textbf{Comment [\uppercase{#1}\themycommentcounter]:}~#2%
+        }%
+    }%
+}
+
+
+% To get the "\fixme" command
+\usepackage{soul}
+\makeatletter
+    \if@todonotes@disabled
+        \newcommand{\fixme}[2]{#1}
+    \else
+        \newcommand{\fixme}[2]{\texthl{#1}\todo{\textbf{Fixme:} #2}}
+    \fi
+\makeatother

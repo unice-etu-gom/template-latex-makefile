@@ -1,0 +1,58 @@
+% To use it, add :
+% * The following commands in the header of the file :
+%	\title{<your title here>}
+%	\newcommand{\subtitle}{<your subtitle here>}
+%	\date{<the date you want or \today>}
+% * The following command in the body of the document where you want your title page :
+
+% La ligne suivante permet d'insérer une page de garde
+% source : http://blog.dorian-depriester.fr/latex/personnalisation-de-la-page-de-garde-sous-latex
+%\makeatletter
+%\begin{titlepage}
+%	\centering
+%	{\large \textsc{École Nationale Supérieure des Mines de Paris}}\\
+%	\textsc{Centre de Mise en Forme des Matériaux}\\
+%	\vspace{1cm}
+%	\includegraphics[width=0.25\textwidth]{logo1.jpeg}
+%	\hfill
+%	\includegraphics[width=0.35\textwidth]{logo2.jpeg}\\
+%	\vspace{1cm}
+%	{\large\textbf{	\@date\\
+%			Thèse de doctorat}}\\
+%	\vfill
+%	{\LARGE \textbf{\@title}} \\
+%	\vspace{2em}
+%	{\large \@author} \\
+%	\vfill
+%	\includegraphics[height=0.07\textheight]{partenaire1.png}
+%	\hfill
+%	\includegraphics[height=0.1\textheight]{partenaire21.jpg}
+%\end{titlepage}
+%\makeatother
+
+
+
+\makeatletter
+\begin{titlepage}
+	\includegraphics[height=2.5cm]{\currfiledir\currfilebase-rsrc/logo-polytech-sophia.jpg}
+	\hfill
+	\includegraphics[height=2.5cm]{\currfiledir\currfilebase-rsrc/logo-itii-paca.jpg}\\
+	\vspace{1cm}
+	\centering{\large \textsc{École Polytechnique de l'Université de Nice-Sophia}}\\
+	\textsc{Formation par alternance\\Électronique et Informatique Industrielle}\\
+	\vfill
+	{\LARGE \textbf{\@title}} \\
+	\vspace{1em}
+	\rule{7cm}{1pt}\\
+	\vspace{1em}
+	{\LARGE \textbf{\subtitle}} \\
+	\vspace{4em}
+	\includegraphics[width=1\textwidth]{\currfiledir\currfilebase-rsrc/titlepage-image.png} \\
+	\vspace{4em}
+	{\large \@author} \\
+	{\large Promotion ITII-P17} \\
+	{\large\textbf{\@date}}
+	\vfill	
+\end{titlepage}
+\makeatother
+

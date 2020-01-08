@@ -1,0 +1,83 @@
+\demo{
+    % Name
+    ToDo - "Fixme"
+}
+{
+    % Description
+    To mark some text as "to be fixed" by highlighting it and add it to the
+    "ToDo" list.
+}
+{
+    % Usage
+    \fixme{<text to highlight>}{<Comment>}
+}
+{
+    % Example
+    This is to show we can \fixme{highlight}{A comment is added (example).}
+    something to fix.
+}
+
+
+
+\demo{
+    % Name
+    ToDo (simple usage)
+}
+{
+    % Description
+    Adds "Post-It"-like comments. It can also generate a list of "todo" with
+    references to find them more easily in the document.
+}
+{
+    % Usage
+    <text>\todo{<content of footnote>}
+}
+{
+    % Example
+    Here is an example text.\todo{Here is the corresponding ToDo}
+}
+
+
+
+\demo{
+    % Name
+    ToDo list
+}
+{
+    % Description
+    Generates a list of "todo" comments with references to find them more easily
+    in the document.
+    \paragraph{Note:} It seems to need two builds to be generated correctly...
+}
+{
+    % Usage
+    \listoftodos
+}
+{
+    % Example
+    (see on next page)
+    \listoftodos
+}
+
+
+
+\demo{
+    % Name
+    Word-like comments based on "todo"
+}
+{
+    % Description
+    Generates comments that look like the ones from Microsoft Word.
+
+    They also are added to the "ToDo list".
+}
+{
+    % Usage
+    \comment[<author (optional)>]{<text>}
+}
+{
+    % Example
+    My \comment[Joe]{This is a comment.} text.
+
+    And \comment[Joe]{This is another comment.} another one.
+}

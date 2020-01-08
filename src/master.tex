@@ -1,0 +1,41 @@
+\documentclass[a4paper]{report}
+%\documentclass[a4paper]{article}
+%\documentclass{exam}
+
+\input{00-header/header}
+
+% ##############################################################################
+% ##############################################################################
+
+\title{Document title}
+\newcommand{\subtitle}{Document sub-title}
+\author{GOM}
+\date{06/01/2019}
+
+% ##############################################################################
+% ##############################################################################
+
+\begin{document}
+
+%%% \frontmatter % Tout ce qui est introductif
+\include{10-frontmatter/010-titlePage}
+\include{10-frontmatter/preface}
+
+\tableofcontents
+
+\include{10-frontmatter/introduction}
+
+
+%\mainmatter % Le "corps" du document
+\include{20-mainmatter/partie1}
+\input{20-mainmatter/partie2.tex}
+
+\include{20-mainmatter/conclusion}
+
+
+%\backmatter % Tout ce qui vient en fin de document
+\include{30-backmatter/glossaire}
+\include{30-backmatter/annexe}
+\include{30-backmatter/4iemecouv}
+
+\end{document}

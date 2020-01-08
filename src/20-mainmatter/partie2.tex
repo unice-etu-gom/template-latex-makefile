@@ -1,0 +1,89 @@
+\part{Included packages examples}
+
+%\newcommand{\demo}[4]{
+%    \section{#1}
+%    \subsection{Description}
+%    #2
+
+%    \subsection{Usage}
+%    %\lstinline|#3|
+%    {\small\texttt{\detokenize{#3}}}
+%    %\begin{lstlisting}[language=tex]
+%    %\detokenize{#3}
+%    %\end{lstlisting}
+
+%    \subsection{Example}
+
+%        \subsubsection{Input:}
+
+%        {
+%            \small\texttt{\detokenize{#4}}
+%        }
+
+%        \begin{lstlisting}[language=tex]^^J
+%        #4 ^^J
+%        \end{lstlisting}
+
+
+%        \subsubsection{Result:}
+%        #4
+
+%    \newpage
+%}
+
+
+
+\newcommand{\demo}[4]{
+    \section{#1}
+    \subsection{Description}
+    #2
+
+    \subsection{Usage}
+    %\lstinline|#3|
+    {\small\texttt{\detokenize{#3}}}
+    %\begin{lstlisting}[language=tex]
+    %\detokenize{#3}
+    %\end{lstlisting}
+
+    \subsection{Example}
+
+        \subsubsection{Input:}
+
+        \boxed{
+            \parbox{
+                \linewidth
+            }{
+                \verb~\detokenize{#4}~
+            }
+        }
+
+
+        \subsubsection{Result:}
+        #4
+
+    \newpage
+}
+
+
+\chapter{annotations}
+
+\demo{
+    % Name
+    footnotes
+}
+{
+    % Description
+    To add footnotes.
+}
+{
+    % Usage
+    <text>\footnote{<content of footnote>}
+}
+{
+    % Example
+    Here is an example text\footnote {Here is the corresponding footnote}.
+}
+
+
+\include{20-mainmatter/partie2/annotations}
+
