@@ -3,11 +3,9 @@
 \usepackage[parent]{currfile}
 \usepackage{currfile-abspath}
 
-\newcommand{\headerDirPath}{00-header}
 
 
-
-\input{\headerDirPath/encoding}
+\subimport{}{encoding.tex}
 
 
 %\usepackage{showframe}
@@ -19,21 +17,21 @@
 %
 %   Document language configuration
 %
-%\input{\headerDirPath/lang/en}
-\input{\headerDirPath/lang/fr}
+%\subimport{lang/}{en}
+\subimport{lang/}{fr}
 
 
 %
 %   Chapters & TOC numbering configuration
 %
-\input{\headerDirPath/numbering/numbering.tex}
+\subimport{numbering/}{numbering.tex}
 
 
 %
 %   Different kind of annotations
 %
-\input{\headerDirPath/annotations/footnotes}
-\input{\headerDirPath/annotations/todo}
+\subimport{annotations/}{footnotes}
+\subimport{annotations/}{todo}
 
 
 % ##############################################################################
@@ -49,7 +47,7 @@
 % Pour utiliser "framed"
 \usepackage{fancybox,framed}
 
-\input{\headerDirPath/math/packages}
+\subimport{math/}{packages}
 
 
 
