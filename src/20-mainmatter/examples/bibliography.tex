@@ -1,0 +1,55 @@
+\chapter{Bibliography}
+
+In this template, bibliography is held in the directory \texttt{30-backmatter/bibliography/}.
+
+Entries are declared in \texttt{.bib} files.
+
+When an entry is used in the document, it will appear in the Bibliography table.
+By default, bibliography entries are not visible until they are in use. To
+change this behaviour, use the \verb|\nocite{*}| command (have a look at the
+commented line in the \texttt{00-header/bibliography.tex} file).
+
+
+See this link for more information: \url{https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management}
+
+
+\section{Citations}
+
+\subsection{Description}
+
+A citation creates a reference to a bibliography item. There's two kind of
+citation : visible and invisible ones.
+
+Visibles ones will create a mark in the document which will behave as an
+hyperlink.
+
+Invisible citations will not be visible in the document, but the entry they
+refer to will be visible in the bibliography table.
+
+
+\subsection{Usage}
+
+Visible citations:
+\begin{lstlisting}
+    \cite{<label>}
+\end{lstlisting}
+
+
+Invisible citations:
+\begin{lstlisting}
+    \nocite{<label>}
+\end{lstlisting}
+
+
+\subsection{Example}
+\subsubsection{Input}
+
+\begin{lstlisting}
+    This is a visible citation\cite{greenwade93}.
+    And this is an invisible one\nocite{goossens93}.
+\end{lstlisting}
+
+
+\subsubsection{Output}
+This is a visible citation\cite{greenwade93}.
+And this is an invisible one\nocite{goossens93}.
