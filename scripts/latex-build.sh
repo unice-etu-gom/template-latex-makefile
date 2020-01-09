@@ -10,6 +10,18 @@ function	F_usage()
 
 
 
+function	F_bibliography()
+{
+	pushd "${pOutputDirectory}"
+		export BIBINPUTS="../src/30-backmatter/;${BIBINPUTS}"
+		export BSTINPUTS="../src/;${BSTINPUTS}"
+		bibtex \
+			"${pProjectName}"
+	popd
+}
+
+
+
 function	F_build()
 {
 	pdflatex \
@@ -66,8 +78,11 @@ fi
 # Compile
 #pushd "${pDirBase}"
 
-# Compile for the first timeµ
+# Compile for the first time
 F_build
+
+# Generate bibliography
+F_bibliography
 
 # Generate glossaries
 F_makeGlossaries
