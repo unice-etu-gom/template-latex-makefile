@@ -17,7 +17,7 @@ function	F_build()
 		-interaction=nonstopmode \
 		-output-directory="${pOutputDirectory}" \
 		-jobname="${pProjectName}" \
-		${pFileMaster} #\
+		"\def\documentVersion{${pProjectVersion}} \input{${pFileMaster}}" #\
 		#-include-directory=src/
 }
 
@@ -53,6 +53,13 @@ if    [ -z "${pFileMaster}" ] ||  [ -z "${pProjectName}" ] ||  [ -z "${pOutputDi
 then
 	F_usage
 	exit 1
+fi
+
+
+pProjectVersion="${PROJECT_VERSION}"
+if [ -z "${pProjectVersion}" ]
+then
+	pProjectVersion="[unknown]"
 fi
 
 

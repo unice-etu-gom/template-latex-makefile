@@ -1,6 +1,7 @@
 SHELL:=/bin/bash
 
 PROJECT_NAME:=DemoLatex
+PROJECT_VERSION:=`git describe --long --tags --always --dirty`
 
 DIR_BUILD:=build
 DIR_OUTPUT:=out
@@ -53,7 +54,12 @@ distclean: clean
 
 pdf: directories
 	pushd src/ \
-	&& bash ../scripts/latex-build.sh $(PROJECT_NAME) master.tex ../$(DIR_BUILD)
+	&&  echo "PROJECT_VERSION=$(PROJECT_VERSION)" \
+	&&  PROJECT_VERSION="$(PROJECT_VERSION)" \
+	    bash ../scripts/latex-build.sh \
+	        $(PROJECT_NAME) \
+	        master.tex \
+	        ../$(DIR_BUILD)
 
 	# copy the generated file to the output directory
 	cp ${DIR_BUILD}/${PROJECT_NAME}.pdf ${DIR_OUTPUT}/
