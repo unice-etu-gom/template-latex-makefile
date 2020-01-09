@@ -5,7 +5,7 @@
 \usepackage{import} % Note : ALWAYS ADD THE TERMINATING SLASH IN PATHS !!!!!
 
 \import{00-header/}{header}
-\import{05-header_user/}{index}
+\import{05-header_user/}{header_user}
 
 % ##############################################################################
 % ##############################################################################
@@ -21,22 +21,14 @@
 \begin{document}
 
 %%% \frontmatter % Tout ce qui est introductif
-\include{10-frontmatter/010-titlePage}
-\include{10-frontmatter/preface}
-
-\tableofcontents
-
-\include{10-frontmatter/introduction}
+\import{10-frontmatter/}{index_frontmatter}
 
 
 %\mainmatter % Le "corps" du document
-\include{20-mainmatter/partie1}
-\input{20-mainmatter/partie2.tex}
-
-\include{20-mainmatter/conclusion}
+\import{20-mainmatter/}{index_mainmatter}
 
 
 %\backmatter % Tout ce qui vient en fin de document
-\import{30-backmatter/}{index}
+\import{30-backmatter/}{index_backmatter}
 
 \end{document}
