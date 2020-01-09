@@ -1,0 +1,103 @@
+% Hyperref is needed to create links between usage of an entry and its
+% descriptive table. If you don't want links, just comment the line.
+\usepackage{hyperref}
+
+% If you want the glossary to be hidden from the table of contents:
+%\usepackage{glossaries}
+% If you want the glossary to be visible in the table of contents:
+%\usepackage[toc]{glossaries}
+
+\usepackage[toc,nopostdot,nonumberlist]{glossaries}
+
+\setacronymstyle{long-short}
+
+\makeglossaries
+
+% To declare a new entry in the document body:
+%   \newacronym{TOTO}{TOTO}{An acronym.}
+%
+% Make use of an entry in the document:
+%   \gls{TOTO}
+%
+% To print the glossary at the right place in the document:
+%    \printglossaries
+
+
+% ------------------------------------------------------------------------------
+% To have a fancy glossary
+%   See: https://tex.stackexchange.com/a/394983
+%
+\usepackage{tipa}
+\usepackage{array}
+\usepackage{longtable}
+
+\newglossarystyle{glossaryStyle_custom}
+{%
+    % longtable with three columns:
+    \renewenvironment{theglossary}%
+    {
+        \begin{longtable}{|l|l|>{\raggedright}p{.5\linewidth}|}
+    }%
+    {
+        \end{longtable}
+    }%
+
+    % Header content
+    \renewcommand*{\glossaryheader}
+    {
+        \hline
+        \textbf{Acronyme} &
+        \textbf{Correspondance} &
+        \textbf{Description}\tabularnewline
+        \hline
+    }%
+
+    % Groups heading content
+    \renewcommand*{\glsgroupheading}[1]
+    {
+        % no group headings:
+    }%
+
+
+    % main (level 0) entries displayed in a row
+    \renewcommand{\glossentry}[2]
+    {
+        % name in bold:
+        \glsentryitem{##1}\glstarget{##1}{\textbf{\glossentryname{##1}}} &
+
+        % symbol in square brackets
+        %[\glossentrysymbol{##1}] &
+        \glsentrytext{##1} &
+
+        % description in italic
+        \textit{\glossentrydesc{##1}}\tabularnewline
+
+        % Draw an horizontal line in the table
+        \hline
+    }
+
+
+    % sub-entries (same as main)
+    \renewcommand{\subglossentry}[3]
+    {
+        \glossentry{##2}{##3}
+    }
+
+
+    % blank row between groups if nogroupskip=false
+    \ifglsnogroupskip
+        \renewcommand*{\glsgroupskip}{}%
+    \else
+        \renewcommand*{\glsgroupskip}{ & & \tabularnewline}%
+    \fi
+}
+
+\setglossarystyle{glossaryStyle_custom}
+
+
+
+%
+% See the thread at
+% https://latex.org/forum/viewtopic.php?t=2976
+% to create two separate tables for glossary and acronym entries, and link
+% an acronym to its corresponding glossary entry.

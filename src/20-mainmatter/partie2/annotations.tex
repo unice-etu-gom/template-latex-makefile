@@ -81,3 +81,94 @@
 
     And \comment[Joe]{This is another comment.} another one.
 }
+
+
+
+\section{
+    % Name
+    Glossaries
+}
+
+    \subsection{Description}
+    Generates glossaries
+
+    \subsection{Usage}
+
+    % Usage
+    Declare new entries (preferably in preable):
+    \begin{lstlisting}
+    \newglossaryentry{<glossary entry label>}
+    {
+        name={<glossary entry acronym>},
+        text={<glossary entry full name>},
+        description={<Descriptive text.>}
+    }
+    \end{lstlisting}
+
+    or
+    \begin{lstlisting}
+        \newacronym
+        [description={<Descriptive text>.}]
+        {<acronym label>}
+        {<acronym>}
+        {<acronym full text>}
+    \end{lstlisting}
+
+    Please note that \texttt{acronym} and \texttt{glossary} entries behave
+    differently in the document.
+
+
+
+    \paragraph{}Display the glossary:
+    \begin{lstlisting}
+    \printglossaries
+    \end{lstlisting}
+
+    \paragraph{}Make use of an entry in the document:
+    \begin{lstlisting}
+    \gls{<entry label>}
+    \end{lstlisting}
+
+
+\subsection{Example}
+\subsubsection{Input}
+In the preamble (inside the \verb|src/05-header_user/glossaries_entries.tex|
+file):
+\begin{lstlisting}
+    \newacronym
+    [description={My acronym description.}]
+    {acr_label}
+    {MyAcronym}
+    {MyAcronymText}
+\end{lstlisting}
+
+
+In the document:
+\begin{lstlisting}
+Acronym usage:\\
+Look for the acronym \gls{acr_label} -text and acronym
+in parenthesis- in the glossary on next page. On
+second usage of the acronym, \gls{acr_label} -only
+acronym- should appear. If the \texttt{hyperref}
+package is loaded before \texttt{glossaries},
+then it will also create links to the glossary entries.
+
+
+The glossary: (see next page)
+\printglossary
+\end{lstlisting}
+
+
+\subsubsection{Output}
+
+Acronym usage:\\
+Look for the acronym \gls{acr_label} -text and acronym
+in parenthesis- in the glossary on next page. On
+second usage of the acronym, \gls{acr_label} -only
+acronym- should appear. If the \texttt{hyperref}
+package is loaded before \texttt{glossaries},
+then it will also create links to the glossary entries.
+
+
+The glossary: (see next page)
+\printglossary

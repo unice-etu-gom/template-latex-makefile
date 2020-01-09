@@ -9,6 +9,29 @@ function	F_usage()
 }
 
 
+
+function	F_build()
+{
+	pdflatex \
+		-halt-on-error \
+		-interaction=nonstopmode \
+		-output-directory="${pOutputDirectory}" \
+		-jobname="${pProjectName}" \
+		${pFileMaster} #\
+		#-include-directory=src/
+}
+
+
+
+function	F_makeGlossaries()
+{
+	makeglossaries \
+		-d "${pOutputDirectory}" \
+		"${pProjectName}"
+		#$(basename ${pFileMaster} .tex)
+}
+
+
 pScriptName="$0"
 
 #shift
@@ -36,14 +59,16 @@ fi
 # Compile
 #pushd "${pDirBase}"
 
-	# Compile
-	pdflatex \
-		-halt-on-error \
-		-interaction=nonstopmode \
-		-output-directory="${pOutputDirectory}" \
-		-jobname="${pProjectName}" \
-		${pFileMaster} #\
-		#-include-directory=src/
+# Compile for the first timeµ
+F_build
+
+# Generate glossaries
+F_makeGlossaries
+
+# Compile for the second time to
+F_build
+
+
 
 #popd
 
