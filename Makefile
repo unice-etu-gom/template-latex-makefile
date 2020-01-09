@@ -37,14 +37,14 @@ cleaner:
 
 
 directories:
-	for lDir in ${DIRECTORIES_LIST} ; do \
+	@for lDir in ${DIRECTORIES_LIST} ; do \
 		if [ ! -d "$${lDir}" ] ; then \
 			mkdir "$${lDir}"; \
 		fi; \
 	done
 
-	# Generate in output directory the subdirectories corresponding to the ones in 'src'
-	find src/ -type d|sed -e 's@^src@'"${DIR_BUILD}"'@'|xargs mkdir -p
+#	Generate in output directory the subdirectories corresponding to the ones in 'src'
+	@find src/ -type d|sed -e 's@^src@'"${DIR_BUILD}"'@'|xargs mkdir -p
 
 
 
