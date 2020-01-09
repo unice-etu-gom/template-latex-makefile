@@ -13,7 +13,7 @@ function	F_usage()
 function	F_bibliography()
 {
 	pushd "${pOutputDirectory}"
-		export BIBINPUTS="../src/30-backmatter/;${BIBINPUTS}"
+		export BIBINPUTS="../src/30-backmatter/bibliography/;${BIBINPUTS}"
 		export BSTINPUTS="../src/;${BSTINPUTS}"
 		bibtex \
 			"${pProjectName}"
