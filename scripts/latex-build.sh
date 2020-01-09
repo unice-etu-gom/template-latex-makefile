@@ -87,7 +87,8 @@ F_bibliography
 # Generate glossaries
 F_makeGlossaries
 
-# Compile for the second time to
+# Compile again to solve references troubles.
+F_build
 F_build
 
 
